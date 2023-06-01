@@ -1,0 +1,264 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efefef;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body h1 {
+  font-size: 72px;
+  margin-bottom: 30px;
+}
+
+body h2 {
+  font-size: 2.4rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 100px auto 0 auto;
+  padding: 20px;
+}
+
+.container img {
+  width: 100%;
+}
+
+.body-content-wrapper {
+  display: flex;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+aside {
+  width: calc(100% / 2 * 1);
+}
+
+aside .aside-bar {
+  position: sticky;
+  background-color: white;
+  padding: 30px;
+  top: 50px;
+}
+
+aside form .filter-element:nth-child(1n + 1) {
+  margin-bottom: 15px;
+}
+
+aside form .filter-element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+aside form .filter-element .filter-element-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+aside .filter-element label:nth-child(1) {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+aside .filter-element select#topic,
+aside .filter-element select#city,
+aside .filter-element select#type {
+  padding: 15px 20px;
+  border-radius: 25px;
+  border: none;
+  background-color: #efefef;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+select#topic,
+select#city,
+select#type {
+  appearance: none;
+}
+
+select#topic,
+select#city,
+select#type {
+  background-image: url(/src/images/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+.filter-element-checkbox {
+  font-size: 15px;
+}
+
+.filter-element-checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-action {
+  text-align: center;
+}
+
+a.bg-button {
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  color: #1200FF;
+  padding: 13px 0;
+  border: 1px solid #1200FF;
+  border-radius: 25px;
+}
+
+main {
+  width: calc(100% / 2 * 3);
+}
+
+.main-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 30px;
+}
+
+.body-content-wrapper .course-box {
+  height: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 40px;
+}
+
+.body-content-wrapper .course-box .sticker {
+  position: absolute;
+  right: -15px;
+  top: 20px;
+  background-color: #FF00E9;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.body-content-wrapper .course-box .image {
+  width: 30%;
+}
+
+.body-content-wrapper .course-box .image img {
+  display: block;
+}
+
+.body-content-wrapper .course-box .more-info {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.body-content-wrapper .course-box .type {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0 0 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  gap: 15px;
+  position: absolute;
+  bottom: 30px;
+}
+
+.body-content-wrapper .course-box .type.long-caption {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.image-container {
+  padding: 5px 35px;
+  margin-bottom: 30px;
+  background-color: white;
+  background-image: url(/src/images/MicrosoftTeams-image.png);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: right 35% top -55px;
+}
+
+.image-container h2 {
+  color: #FF00E9;
+}
+
+.image-container span {
+  color: black;
+}
+
+.filter {
+  display: none;
+  text-align: center;
+}
+
+.bg-button.hidden {
+  display: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  color: white;
+  padding: 13px 0;
+  background-color: #1200FF;
+  border-radius: 25px;
+}
+
+@media (max-width: 950px) {
+  .main-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .bg-button {
+    display: block;
+  }
+}
+
+@media (max-width: 650px) {
+  .body-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  main {
+    width: 100%
+  }
+
+  .bg-button {
+    display: block;
+  }
+}
+
+@media (max-width: 549px) {
+  .filter {
+    display: block;
+  }
+  
+  .bg-button.hidden {
+    display: block;
+  }
+
+  aside {
+    display: none;
+  }
+}

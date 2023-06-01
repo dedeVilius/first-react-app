@@ -1,4 +1,4 @@
-import ShopItem from "./ShopItem";
+import ShopItem from "../ShopItem/ShopItem";
 
 function ShopsWrapper() {
 return (

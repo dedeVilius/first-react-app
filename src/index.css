@@ -12,3 +12,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-list {
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 25px;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-link.active {
+  color: blue;
+  text-decoration: underline;
+}

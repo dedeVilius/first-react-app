@@ -1,15 +1,14 @@
 function CourseItem(props) {
 
-  const { logo, sticker, title, description, typeCategory, typeDate } = props
+  const { logo, sticker, title, description, category, date } = props
+
+  const isStickerEnabled = sticker ? <div className="sticker"><span>{props.sticker}</span></div> : '';
+  const isCategoryEnabled = category ? <span className="category"><i className="fa-solid fa-graduation-cap"></i> {category}</span> : '';
+  const isDateEnabled = date ? <span className="date"><i className="fa-solid fa-sun"></i> {date}</span> : '';
 
   return (
     <div className="course-box">
-
-      {sticker ?
-        <div className="sticker">
-          <span>{props.sticker}</span>
-        </div> : ''}
-
+      {isStickerEnabled}
       <div className="image">
         <img src={logo} alt="logo" />
       </div>
@@ -18,9 +17,8 @@ function CourseItem(props) {
         <p>{description}</p>
       </div>
       <div className="type">
-
-        {typeCategory ? <span className="category"><i className="fa-solid fa-graduation-cap"></i> {typeCategory}</span> : ''}
-        {typeDate ? <span className="date"><i className="fa-solid fa-sun"></i> {typeDate}</span> : ''}
+        {isCategoryEnabled}
+        {isDateEnabled}
       </div>
     </div>
   )

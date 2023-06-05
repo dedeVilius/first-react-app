@@ -1,11 +1,37 @@
-function ShopItem() {
+function ShopItem(props) {
+  const { title, email, phone, address, addressLink } = props.data;
+
+  if (!title) {
+    return '';
+  }
+
+  const emailElement = email && <li>Email: <a href={`mailto:${email}`}>{email}</a></li>;
+
+  let addressElement = '';
+
+  if (address) {
+    if (addressLink) {
+      addressElement = <li>Address: <a href={addressLink} target="_blank" rel="noreferrer">{address}</a></li>;
+    } else {
+      addressElement = <li>Address: {address}</li>;
+    }
+  }
+  
   return (
     <div className="contact-box">
-      <h2>Parduotuvė 1</h2>
+      <h2>{title}</h2>
       <ul>
-        <li><span>Phone:</span> <a href="http://">+37066666666</a></li>
-        <li><span>Email:</span> <a href="http://">shop1@parduotuve.lt</a></li>
-        <li><span>Address:</span><a href="http://"> Rotušės aikštė 1, Kaunas</a></li>
+
+      {phone ? (
+          <li>
+            Phone: <a href={`tel:${phone}`}>{phone}</a>
+          </li> 
+        ) : (
+          <li>No phone</li>
+        )}
+
+        {emailElement}
+        {addressElement}
       </ul>
     </div>
   )

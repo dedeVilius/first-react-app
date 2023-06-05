@@ -14,10 +14,10 @@ function ShopsWrapper() {
       email: "info2@parduotuve.lt",
     },
     {
-      title:"Parduotuve 3",
-      phone:"+370456555555",
-      email:"info3@parduotuve.lt",
-      address:"Vilniaus g. 21, Vilnius",
+      title: "Parduotuve 3",
+      phone: "+370456555555",
+      email: "info3@parduotuve.lt",
+      address: "Vilniaus g. 21, Vilnius",
     },
     {
       title: "Parduotuve 4",
@@ -27,13 +27,15 @@ function ShopsWrapper() {
     }
   ];
 
-  const shopListElements = shopsData.map((shop, index) => <ShopItem key={index} data={shop} />);
+  const shopListElements = shopsData.map((shop, index) =>
+    <ShopItem key={index} data={shop} />
+  );
 
-return (
-  <div className="wrapper">
-    {shopListElements}
-  </div>
-)
+  return (
+    <div className="wrapper">
+      {shopListElements}
+    </div>
+  )
 }
 
 export default ShopsWrapper;

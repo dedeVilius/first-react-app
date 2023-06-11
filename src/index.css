@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
 
@@ -29,5 +35,4 @@ code {
 
 .nav-link.active {
   color: blue;
-  text-decoration: underline;
 }

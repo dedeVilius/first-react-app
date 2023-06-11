@@ -1,0 +1,10 @@
+.shopping-item {
+  cursor: pointer;
+}
+
+.shopping-item.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+  cursor: pointer;
+}
+

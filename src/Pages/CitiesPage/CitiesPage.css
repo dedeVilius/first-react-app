@@ -1,0 +1,24 @@
+.cities-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.city-item {
+  width: calc((100% - 10px) / 2);
+  background-color: #efefef;
+  border: 1px solid #252525;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.city-title h1.capital::after {
+  content: ' (Capital)';
+  color: #252525;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.odd .city-item:last-child {
+  width: 100%;
+}

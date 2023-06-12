@@ -48,7 +48,7 @@ const TodoListForm = ({ onAddTask, onNewTask, editTaskData }) => {
           </div>
           <div className='form-control'>
             <label htmlFor='todo-list-status'>Completed: </label>
-            <input type='checkbox' id='todo-list-status' name='status' value={status} onChange={statusHandler}/>
+            <input type='checkbox' id='todo-list-status' name='status' checked={status} onChange={statusHandler}/>
           </div>
           <div className='form-control'>
             <label htmlFor='todo-list-date'>Finish date: </label>

@@ -105,6 +105,33 @@ const CitiesPage = () => {
   return (
     <Container>
       <main>
+        <form>
+          <div className="form-control">
+            <label htmlFor='city-name'>Name:</label>
+            <input type='text' id='city-name' name='name' />
+          </div>
+          <div className="form-control">
+            <label htmlFor='city-population'>Population:</label>
+            <input type='number' id='city-population' name='population' />
+          </div>
+          <div className="form-control">
+            <label htmlFor='city-country'>Country:</label>
+            <input type='number' id='city-country' name='country' />
+          </div>
+          <div className="form-control">
+            <label htmlFor='city-continent'>Continent:</label>
+            <input type='number' id='city-continent' name='continent' />
+          </div>
+          <div className="form-control">
+            <input type='checkbox' id='city-capital' name='capital' />
+            <label htmlFor='city-capital'>City is capital:</label>
+          </div>
+          <div className="form-control">
+            <label htmlFor='city-tourist-attractions'>Tourist attractions:</label>
+            <textarea id='city-tourist-attractions' name='tourist-attractions' />
+          </div>
+          <input type='submit' id='city-submit' name='Add a city' />
+        </form>
         <div className={`cities-wrapper ${oddClass}`}>
           {
             cities.map((city, index) => <CityItem data={city} key={index} />)

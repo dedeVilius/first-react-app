@@ -10,6 +10,7 @@ import Container from './Components/Container/Container';
 import CounterPage from './Pages/CounterPage/CounterPage';
 import ShoppingListPage from './Pages/ShoppingListPage/ShoppingListPage';
 import CitiesPage from './Pages/CitiesPage/CitiesPage';
+import TodoPage from './Pages/TodoListPage/TodoListPage';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
             <li className='nav-item'>
               <NavLink to='/cities' className='nav-link'>Cities Page</NavLink>
             </li>
+            <li className='nav-item'>
+              <NavLink to='/todo-list' className='nav-link'>Todo List Page</NavLink>
+            </li>
           </ul>
         </nav>
         <Routes>
@@ -48,6 +52,7 @@ function App() {
           <Route path='/counter' element={<CounterPage />} /> */}
           <Route path='/shopping-list' element={<ShoppingListPage />} />
           <Route path='/cities' element={<CitiesPage />} />
+          <Route path='/todo-list' element={<TodoPage />} />
           <Route path='*' element={
             <div>
               <h1>404 error. Page not found</h1>

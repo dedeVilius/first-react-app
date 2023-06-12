@@ -24,6 +24,8 @@ const TodoListPage = () => {
   ];
 
   const [tasks, setTasks] = useState(tasksData);
+  const [editTaskIndex, setEditTaskIndex] = useState(null);
+  const [editTask, setEditTask] = useState(null);
 
   const addTaskHandler = (task) => {
     setTasks(prevState => [task, ...prevState])
@@ -33,10 +35,25 @@ const TodoListPage = () => {
     setTasks(prevState => prevState.toSpliced(taskIndex, 1))
   }
 
+  const tasksUpdateHandler = (task) => {
+    if (editTask) {
+      setTasks(prevState => prevState.toSpliced(editTaskIndex, 1, task));
+      setEditTask(null);
+      setEditTaskIndex(null);
+    } else {
+      setTasks(prevState => [task, ...prevState])
+    }
+  }
+
+  const editTaskHandler = (taskIndex) => {
+    setEditTask(tasks[taskIndex]);
+    setEditTaskIndex(taskIndex);
+  }
+
   return (
    <div className='content-wrapper'>
-    <TodoListForm onAddTask={addTaskHandler} />
-    <TodoList data={tasks} onRemoveTask={removeTaskHandler} />
+    <TodoListForm onAddTask={addTaskHandler} editTaskData={editTask} onNewTask={tasksUpdateHandler} />
+    <TodoList data={tasks} onRemoveTask={removeTaskHandler} onEditTask={editTaskHandler} />
    </div>
   )
 }

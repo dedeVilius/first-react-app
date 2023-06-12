@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TodoListForm = ({ onNewTask }) => {
+const TodoListForm = ({ onAddTask }) => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -17,10 +17,9 @@ const TodoListForm = ({ onNewTask }) => {
     e.preventDefault();
 
     const newTask = { name: name, description: description, status: status, date: date }
-
-    onNewTask(newTask);
+    
+    onAddTask(newTask);
   }
-
 
   return (
     <div className='todo-list-form-wrapper'>

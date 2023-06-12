@@ -1,5 +1,5 @@
 
-const TodoListItem = ({ task }) => {
+const TodoListItem = ({ task, onRemoveTask, index }) => {
 
   const { name, description, status, date } = task;
 
@@ -22,6 +22,12 @@ const TodoListItem = ({ task }) => {
       </div>
       <div className='date'>
         <span>{date}</span>
+      </div>
+      <div className="item-control">
+        <button onClick={() => onRemoveTask(index)}>Remove</button>
+        <br />
+        <br />
+        <button>Edit</button>
       </div>
     </div>
   )

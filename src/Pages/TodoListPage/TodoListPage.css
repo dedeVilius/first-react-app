@@ -51,8 +51,9 @@
 
 .todo-item {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   justify-items: center;
+  align-items: center;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid plum;

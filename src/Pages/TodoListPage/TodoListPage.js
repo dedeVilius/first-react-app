@@ -29,10 +29,14 @@ const TodoListPage = () => {
     setTasks(prevState => [task, ...prevState])
   }
 
+  const removeTaskHandler = (taskIndex) => {
+    setTasks(prevState => prevState.toSpliced(taskIndex, 1))
+  }
+
   return (
    <div className='content-wrapper'>
-    <TodoListForm onNewTask={addTaskHandler} />
-    <TodoList data={tasks}/>
+    <TodoListForm onAddTask={addTaskHandler} />
+    <TodoList data={tasks} onRemoveTask={removeTaskHandler} />
    </div>
   )
 }

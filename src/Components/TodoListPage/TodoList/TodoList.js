@@ -1,13 +1,13 @@
 import TodoListItem from "../TodoListItem/TodoListItem"
 
-const TodoList = ({ data }) => {
+const TodoList = ({ data, onRemoveTask }) => {
 
   
 
   return (
     <div className='todo-list-wrapper'>
       {
-        data.map((task, index) => <TodoListItem task={task} key={index}></TodoListItem>)
+        data.map((task, index) => <TodoListItem task={task} key={index} onRemoveTask={onRemoveTask}></TodoListItem>)
       }
     </div>
   )

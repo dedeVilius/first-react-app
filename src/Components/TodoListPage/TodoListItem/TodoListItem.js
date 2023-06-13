@@ -1,10 +1,8 @@
+import { useState } from "react";
 
-const TodoListItem = ({ task, onRemoveTask, index, onEditTask }) => {
+const TodoListItem = ({ task, onRemoveTask, index, onEditTask, onChangeStatus }) => {
 
   const { name, date, description, status, dueDate } = task;
-
-  console.log(date)
-  console.log(dueDate);
 
   let statusElement = 'Not completed';
 
@@ -22,6 +20,9 @@ const TodoListItem = ({ task, onRemoveTask, index, onEditTask }) => {
       </div>
       <div className='status'>
         <span>{statusElement}</span>
+        <br />
+        <br />
+        <button onClick={() => onChangeStatus(index)}>Change status</button>
       </div>
       <div className='date'>
         <span>{date}</span>
@@ -34,6 +35,7 @@ const TodoListItem = ({ task, onRemoveTask, index, onEditTask }) => {
         <br />
         <br />
         <button onClick={() => onEditTask(index)}>Edit</button>
+        <br></br>
       </div>
     </div>
   )

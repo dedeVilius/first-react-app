@@ -1,6 +1,6 @@
 import TodoListItem from "../TodoListItem/TodoListItem"
 
-const TodoList = ({ data, onRemoveTask, onEditTask }) => {
+const TodoList = ({ data, onRemoveTask, onEditTask, onChangeStatus }) => {
 
   if (data && data.length > 0) {
     return (
@@ -23,7 +23,7 @@ const TodoList = ({ data, onRemoveTask, onEditTask }) => {
           </div>
         </div>
         {
-          data.map((task, index) => <TodoListItem task={task} index={index} key={index} onRemoveTask={onRemoveTask} onEditTask={onEditTask}></TodoListItem>)
+          data.map((task, index) => <TodoListItem task={task} index={index} key={index} onRemoveTask={onRemoveTask} onEditTask={onEditTask} onChangeStatus={onChangeStatus}></TodoListItem>)
         }
       </div>
     )

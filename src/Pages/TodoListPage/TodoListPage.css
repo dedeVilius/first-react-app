@@ -49,6 +49,10 @@
   padding: 10px;
 }
 
+.todo-list-wrapper h2 {
+  text-align: center;
+}
+
 .todo-item {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

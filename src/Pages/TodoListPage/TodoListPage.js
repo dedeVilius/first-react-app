@@ -6,23 +6,7 @@ import TodoList from "../../Components/TodoListPage/TodoList/TodoList";
 
 const TodoListPage = () => {
 
-  const tasksData = [
-    {
-      name: 'Užduotis 1',
-      date: '2023-06-11',
-      description: 'Reikia atlikti namų ruošos darbus',
-      status: false,
-      dueDate: '2023-06-11'
-
-    },
-    {
-      name: 'Užduotis 2',
-      date: '2023-06-11',
-      description: 'Reikia atlikti tam tikras funkcijas',
-      status: true,
-      dueDate: '2023-06-12'
-    },
-  ];
+  const tasksData = [];
 
   const [tasks, setTasks] = useState(tasksData);
   const [editTaskIndex, setEditTaskIndex] = useState(null);

@@ -9,27 +9,24 @@ const TodoListPage = () => {
   const tasksData = [
     {
       name: 'Užduotis 1',
+      date: '2023-06-11',
       description: 'Reikia atlikti namų ruošos darbus',
       status: false,
-      date: '2023-06-11'
+      dueDate: '2023-06-11'
 
     },
     {
       name: 'Užduotis 2',
+      date: '2023-06-11',
       description: 'Reikia atlikti tam tikras funkcijas',
       status: true,
-      date: '2023-06-12'
-
+      dueDate: '2023-06-12'
     },
   ];
 
   const [tasks, setTasks] = useState(tasksData);
   const [editTaskIndex, setEditTaskIndex] = useState(null);
   const [editTask, setEditTask] = useState(null);
-
-  const addTaskHandler = (task) => {
-    setTasks(prevState => [task, ...prevState])
-  }
 
   const removeTaskHandler = (taskIndex) => {
     setTasks(prevState => prevState.toSpliced(taskIndex, 1))
@@ -51,10 +48,10 @@ const TodoListPage = () => {
   }
 
   return (
-   <div className='content-wrapper'>
-    <TodoListForm onAddTask={addTaskHandler} editTaskData={editTask} onNewTask={tasksUpdateHandler} />
-    <TodoList data={tasks} onRemoveTask={removeTaskHandler} onEditTask={editTaskHandler} />
-   </div>
+    <div className='content-wrapper'>
+      <TodoListForm editTaskData={editTask} onNewTask={tasksUpdateHandler} />
+      <TodoList data={tasks} onRemoveTask={removeTaskHandler} onEditTask={editTaskHandler} />
+    </div>
   )
 }
 

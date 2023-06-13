@@ -1,37 +1,40 @@
 import { useState, useEffect } from "react";
 
-const TodoListForm = ({ onAddTask, onNewTask, editTaskData }) => {
+const TodoListForm = ({ onNewTask, editTaskData }) => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('');
-  const [date, setDate] = useState('');
+  const [dueDate, setDueDate] = useState('');
 
   useEffect(() => {
     if (editTaskData) {
       setName(editTaskData.name);
       setDescription(editTaskData.description)
       setStatus(editTaskData.status)
-      setDate(editTaskData.date)
+      setDueDate(editTaskData.date)
     }
   }, [editTaskData])
 
   const nameHandler = (e) => setName(e.target.value);
   const descriptionHandler = (e) => setDescription(e.target.value);
   const statusHandler = (e) => setStatus(e.target.checked);
-  const dateHandler = (e) => setDate(e.target.value);
+  const dueDateHandler = (e) => setDueDate(e.target.value);
 
 
   const submitTaskHandler = (e) => {
     e.preventDefault();
 
-    const newTask = { name: name, description: description, status: status, date: date }
-    
+    const date = new Date();
+    const fullDate = date.toISOString().slice(0, 10);
+
+    const newTask = { name, date: fullDate, description, status, dueDate }
+
     onNewTask(newTask);
     setName('');
     setDescription('');
     setStatus('');
-    setDate('');
+    setDueDate('');
   }
 
   return (
@@ -48,11 +51,11 @@ const TodoListForm = ({ onAddTask, onNewTask, editTaskData }) => {
           </div>
           <div className='form-control'>
             <label htmlFor='todo-list-status'>Completed: </label>
-            <input type='checkbox' id='todo-list-status' name='status' checked={status} onChange={statusHandler}/>
+            <input type='checkbox' id='todo-list-status' name='status' checked={status} onChange={statusHandler} />
           </div>
           <div className='form-control'>
-            <label htmlFor='todo-list-date'>Finish date: </label>
-            <input type='date' id='todo-list-date' name='date' className='width-250' value={date} onChange={dateHandler} />
+            <label htmlFor='todo-list-date'>Due date: </label>
+            <input type='date' id='todo-list-date' name='date' className='width-250' value={dueDate} onChange={dueDateHandler} />
           </div>
           <div className='form-submit'>
             <input type='submit' value={`${editTaskData ? 'Edit a task' : 'Add a task'}`}></input>

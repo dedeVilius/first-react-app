@@ -1,7 +1,10 @@
 
 const TodoListItem = ({ task, onRemoveTask, index, onEditTask }) => {
 
-  const { name, description, status, date } = task;
+  const { name, date, description, status, dueDate } = task;
+
+  console.log(date)
+  console.log(dueDate);
 
   let statusElement = 'Not completed';
 
@@ -22,6 +25,9 @@ const TodoListItem = ({ task, onRemoveTask, index, onEditTask }) => {
       </div>
       <div className='date'>
         <span>{date}</span>
+      </div>
+      <div className='due-date'>
+        <span>{dueDate}</span>
       </div>
       <div className="item-control">
         <button onClick={() => onRemoveTask(index)}>Remove</button>

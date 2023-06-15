@@ -6,6 +6,7 @@ const TodoListForm = ({ onNewTask, editTaskData }) => {
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('');
   const [dueDate, setDueDate] = useState('');
+  const [id, setId] = useState();
 
   useEffect(() => {
     if (editTaskData) {
@@ -28,7 +29,7 @@ const TodoListForm = ({ onNewTask, editTaskData }) => {
     const date = new Date();
     const fullDate = date.toISOString().slice(0, 10);
 
-    const newTask = { name, date: fullDate, description, status, dueDate }
+    const newTask = { name, date: fullDate, description, status, dueDate, id: Math.random() }
 
     onNewTask(newTask);
     setName('');

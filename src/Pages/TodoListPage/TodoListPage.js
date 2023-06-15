@@ -33,12 +33,9 @@ const TodoListPage = () => {
 
   const changeStatusHandler = (taskIndex) => {
     setTasks(prevState => {
-      console.log(prevState);
       const newState = [...prevState];
       const completedTask = newState[taskIndex];
-      console.log(completedTask)
       const updatedCompletedTask = {...completedTask};
-      console.log(updatedCompletedTask)
       updatedCompletedTask.status = !updatedCompletedTask.status;
 
       newState[taskIndex] = updatedCompletedTask;
